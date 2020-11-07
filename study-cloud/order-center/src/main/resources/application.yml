@@ -23,9 +23,9 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://47.106.144.8:3306/nacos_cloud_user?useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      url: jdbc:mysql://127.0.0.1:3306/nacos_cloud_user?useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
       username: root
-      password: 199610w
+      password: root
       initial-size: 10
       max-active: 100
       min-idle: 10
