@@ -1,0 +1,36 @@
+server:
+  port: 8668
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: gateway-center
+
+  cloud:
+    #注册中心
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    #网关服务
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]': # 匹配所有请求
+            allowedOrigins: "*" #跨域处理 允许所有的域
+            allowedMethods: # 支持的方法
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+        #用户微服务
+        - id: user-router
+          uri: lb://user-center
+          predicates:
+            - Path=/api/user/**,/api/address/**
+          filters:
+            - StripPrefix=1

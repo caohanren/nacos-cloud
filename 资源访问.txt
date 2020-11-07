@@ -1,0 +1,13 @@
+
+各模块端口号
+gateway-center：8668
+oauth-center：  8666
+user-center ：  8667
+demo        :   8669
+order-center:   8665
+
+版本：
+<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+<spring-cloud-alibaba.version>2.1.0.RELEASE</spring-cloud-alibaba.version>
+
+

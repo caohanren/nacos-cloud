@@ -1,0 +1,13 @@
+keytool -genkeypair -alias demo -keyalg RSA -keypass demo123 -keystore demoku.jks -storepass demoku
+
+
+encrypt:
+  key-store:
+    location: classpath:/demoku.jks
+    alias: demo
+    password: demoku
+    secret: demo123
+	
+
+
+localhost:8766/oauth/authorize?client_id=c1&response_type=code&scope=ROLE_ADMIN&redirect_uri=http://localhost:8766/loginByCode

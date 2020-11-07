@@ -1,0 +1,53 @@
+server:
+  port: 8666
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: oauth-center
+    #允许相同名称的bean覆盖
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://47.106.144.8:3306/nacos_cloud_oauth?useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: 199610w
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+  #注册中心
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+#oauth2认证授权，客户端配置
+auth:
+  clientId: c1
+  clientSecret: secret
+  cookieDomain: localhost
+  cookieMaxAge: -1
+
+encrypt:
+  key-store:
+    location: classpath:/demoku.jks
+    alias: demo
+    password: demo123
+    secret: demoku      #秘钥库密码
+
+
+
+

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: demo
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848 #nacos中心地址
+        file-extension: yaml # 配置文件格式
+        shared-dataids: common.yaml # 配置要引入的配置，多个用英文逗号分隔
+        refreshable-dataids: common.yaml # 配置要实现动态配置刷新的配置，多个用英文逗号分隔
+  profiles:
+    active: test # 环境标识
